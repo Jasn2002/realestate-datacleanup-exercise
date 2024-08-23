@@ -6,8 +6,6 @@ from ipyleaflet import Map, basemaps, Marker, LayerGroup, CircleMarker, WidgetCo
 data_set = pd.read_csv('assets/real_estate.csv', sep=';')
 populations = data_set['level5'].drop_duplicates()
 
-print(type(data_set['price'].max()))
-
 def get_address_with_price(data_frame : pd.DataFrame, price_value : np.int64) -> str:
     #Find the column of the highest price house. Using the head() function to prevent multiple values
     price_row = data_frame.loc[data_frame['price'] == price_value].head(1)
